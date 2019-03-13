@@ -30,6 +30,7 @@ app.get('/', function(req, res) {
 	
 });
 
-app.listen(3003,function(){
-	console.log('App running at http://localhost:3003');
+var port = process.env.PORT || 8080;
+app.listen(port, function() {
+    console.log('App running on http://localhost:' + port);
 });
