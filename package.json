@@ -1,0 +1,26 @@
+{
+  "name": "music",
+  "version": "1.0.0",
+  "description": "Music Player by Kislay",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "music"
+  ],
+  "author": "@kislay",
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.14.0",
+    "mongodb": "^3.1.13"
+  },
+  "devDependencies": {}
+}

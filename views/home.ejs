@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="/public/bootstrap.min.css" type="text/css">
+	<title> Music Player </title>
+	<style>
+		body {
+		
+			padding: 30px;
+			background: url('/public/bg.jpg');
+			text-align: center;
+		}
+		.contents{
+			background: #fff;
+			padding: 20px;
+			margin: auto;
+			opacity: 0.7;
+			text-align: center;
+		}
+		.contents button{
+			width: 100px;
+			opacity: 0.9;
+			background: #000;
+		}
+		h1 {
+			color: #333333;
+			font-size: 60px;
+		}
+		h2 {
+			color: #2e2e2e;
+			font-size: 28px;
+		}
+		a {
+			color: #2f2f2f;
+			font-size: 18px
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="container contents">
+	<h1>  Music Player </h1>
+	<hr>
+	<h2>  Eckovation Assignment</h2>
+	<hr>
+	<a href="#">By Kislay</a> 
+	
+	
+		<div class="row">
+			<% songs.forEach(function(songs) { %>
+				<div class="col-md-4">
+					<img class="img img-responsive" src="/public/song.png"/>
+					<h2> <%= songs.name %> </h2>
+					<audio controls>
+					  <source src="<%= songs.url %>" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+					<hr>
+				</div>
+			<% }); %>
+			
+		</div>
+	</div>
+	
+</body>
+</html>
