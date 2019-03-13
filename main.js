@@ -1,17 +1,17 @@
 var express = require('express');
 var app = express();
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://kislay:kislay@5@cluster0-rxnqh.mongodb.net/test?retryWrites=true";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-
+var MongoClient = require('mongodb').MongoClient;
+	
 app.use('/public', express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
 	
+	var uri = "mongodb+srv://kislay:kislay@5@cluster0-rxnqh.mongodb.net/test?retryWrites=true";
+	var client = new MongoClient(uri, { useNewUrlParser: true });
 	client.connect(err => {
-		const collection = client.db("music").collection("songs");
+		var collection = client.db("music").collection("songs");
 		var cursor = collection.find();
 		
 		var data = cursor.toArray();
